@@ -1,6 +1,6 @@
 {
   "name": "SelfCam",
-  "version_number": "0.1.0",
+  "version_number": "0.1.1",
   "website_url": "",
   "description": "Practice-only picture-in-picture self-view: drop a camera, watch your own body/cosmetics, with up to 5s replay.",
   "dependencies": [
