@@ -1,40 +1,24 @@
-# SelfCam
+# selfcam
 
-A client-side, **practice-only** mod that adds a small picture-in-picture showing **your own
-character** — so you can watch your movement, animations and cosmetics while you play.
+a straftat mod that shows your own character in a little corner cam while you play. you drop a camera in the world, it stays put and keeps looking at you, and you can rewind it up to 5 seconds to see how a movement looked.
 
-You drop a camera in the world; it stays put and keeps looking at you (security-cam style), with an
-adjustable **replay delay** so you can review how a movement looked a moment after you did it.
+![](https://raw.githubusercontent.com/erickfm/straftat-selfcam/main/media/screenshot-1.png)
+![](https://raw.githubusercontent.com/erickfm/straftat-selfcam/main/media/screenshot-2.png)
 
-## Controls (rebindable in the config / mod menu)
+## controls
 
-| Key | Action |
-|-----|--------|
-| `O` | Toggle the PIP on/off |
-| `P` | Drop the camera at head level (a glowing marker shows where) |
-| `L` | Lock/unlock — track your head, or hold the current view (marker turns red when locked) |
-| `[` `]` | Decrease / increase the **replay delay** (0 = live, up to 5s in the past) |
-| `K` | Save a **full-resolution screenshot** of the self-cam view to your Pictures folder |
+- `o` - turn the cam on/off
+- `p` - drop the camera at head height (a marker shows where it is)
+- `l` - lock it in place, or let it follow you again
+- `[` `]` - rewind delay, from live up to 5 seconds back
+- `k` - save a screenshot to your pictures folder (full res when live)
 
-The PIP shows your full third-person body, head and cosmetics (suit, hat, etc.). FOV and keys are
-configurable.
+fov and the keybinds can be changed in the config or the mod menu.
 
-## Fairness / scope
+## fairness
 
-This mod is **practice-only by design** and **read-only / vanilla-compatible** — it sends no network
-messages and changes no gameplay state, so non-modded peers see no difference.
+it's practice only. it only runs in the tutorial and the exploration/sandbox maps, and it turns itself off in real matches so it can't be used as an advantage. it's read-only and doesn't touch anything other players see.
 
-It is **active only in the tutorial and the exploration / sandbox (test) maps**, and **force-disables
-itself in real matches** (public matchmaking *and* private custom matches on real maps). This is
-fail-closed: once you're in a real match the game gives no reliable way to tell a private lobby from
-matchmaking, so it stays off rather than risk being a competitive advantage.
+## install
 
-## Install
-
-Depends on BepInEx. Install via a mod manager (r2modman / Thunderstore Mod Manager) and it pulls in
-the dependency automatically.
-
-## Status
-
-Early release (v0.1.0): placeable self-view + head tracking + lock + replay + cosmetics, with a
-fail-closed practice gate.
+use a mod manager like r2modman or thunderstore mod manager and it'll pull in bepinex on its own.

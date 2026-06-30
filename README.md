@@ -1,46 +1,43 @@
-# SelfCam
+# selfcam
 
-A client-side, **practice-only** BepInEx mod for **STRAFTAT** that adds a corner picture-in-picture
-showing **your own character** — drop a camera in the world and watch your body, animations and
-cosmetics, with an adjustable replay delay so you can review how a movement looked.
+a straftat mod that shows your own character in a little corner cam while you play. you drop a camera in the world, it stays put and keeps looking at you, and you can rewind it up to 5 seconds to see how a movement looked.
 
-Read-only and vanilla-compatible: it sends no network messages and changes no gameplay state.
+![](media/screenshot-1.png)
+![](media/screenshot-2.png)
 
-## Controls (rebindable via the BepInEx config / mod menu)
+## controls
 
-| Key | Action |
-|-----|--------|
-| `O` | Toggle the PIP on/off |
-| `P` | Drop the camera at head level (glowing marker shows where) |
-| `L` | Lock/unlock — track your head, or hold the current view |
-| `[` `]` | Decrease / increase the replay delay (0 = live, up to 5s in the past) |
-| `K` | Save a screenshot of the self-cam to your Pictures folder (full-res when live) |
+- `o` - turn the cam on/off
+- `p` - drop the camera at head height (a marker shows where it is)
+- `l` - lock it in place, or let it follow you again
+- `[` `]` - rewind delay, from live up to 5 seconds back
+- `k` - save a screenshot to your pictures folder (full res when live)
 
-FOV and all keys are configurable.
+fov and the keybinds can be changed in the config or the mod menu.
 
-## Fairness / scope
+## fairness
 
-Active **only in the tutorial and exploration/sandbox (test) maps**; it **force-disables itself in
-all real matches** (public matchmaking *and* private custom matches on real maps). This is
-fail-closed — once you're in a real match the game gives no reliable, client-synced way to tell a
-private lobby from matchmaking, so it stays off rather than risk being a competitive advantage.
+it's practice only. it only runs in the tutorial and the exploration/sandbox maps, and it turns itself off in real matches so it can't be used as an advantage. it's read-only and doesn't touch anything other players see.
 
-## Install (players)
+## install
 
-Install via a mod manager (r2modman / Thunderstore Mod Manager); it pulls in BepInEx automatically.
+use a mod manager like r2modman or thunderstore mod manager and it'll pull in bepinex on its own.
 
-## Build (developers)
+## building
 
-- Requires the .NET SDK and a local STRAFTAT install (the build references the game's DLLs).
-- Set your game path in `QuarterViewSelfCam/Directory.Build.local.props`:
-  ```xml
-  <Project><PropertyGroup>
-    <GameDir>/path/to/steamapps/common/STRAFTAT/</GameDir>
-  </PropertyGroup></Project>
-  ```
-- `dotnet build -c Release QuarterViewSelfCam/QuarterViewSelfCam.csproj` builds and deploys the DLL
-  into the game's `BepInEx/plugins/`.
-- `./pack.sh` produces a Thunderstore-style package zip in `dist/`.
+needs the .net sdk and a local copy of straftat (it builds against the game's dlls). point it at your install by making `QuarterViewSelfCam/Directory.Build.local.props` (note: the filename and the xml tags are case-sensitive):
 
-BepInEx compile-time DLLs are vendored in `libs/` so the build doesn't depend on where BepInEx is
-installed at runtime.
+```xml
+<Project><PropertyGroup>
+  <GameDir>/path/to/steamapps/common/STRAFTAT/</GameDir>
+</PropertyGroup></Project>
+```
+
+then:
+
+```
+dotnet build -c Release QuarterViewSelfCam/QuarterViewSelfCam.csproj   # builds + drops the dll into the game
+./pack.sh                                                              # makes the thunderstore zip in dist/
+```
+
+the bepinex compile dlls are vendored in `libs/` so it builds without bepinex installed.
