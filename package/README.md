@@ -21,4 +21,4 @@ it's practice only. it only runs in the tutorial and the exploration/sandbox map
 
 ## install
 
-use a mod manager like r2modman or thunderstore mod manager and it'll pull in bepinex on its own.
+use a mod manager like r2modman or thunderstore mod manager

@@ -21,23 +21,5 @@ it's practice only. it only runs in the tutorial and the exploration/sandbox map
 
 ## install
 
-use a mod manager like r2modman or thunderstore mod manager and it'll pull in bepinex on its own.
+use a mod manager like r2modman or thunderstore mod manager 
 
-## building
-
-needs the .net sdk and a local copy of straftat (it builds against the game's dlls). point it at your install by making `QuarterViewSelfCam/Directory.Build.local.props` (note: the filename and the xml tags are case-sensitive):
-
-```xml
-<Project><PropertyGroup>
-  <GameDir>/path/to/steamapps/common/STRAFTAT/</GameDir>
-</PropertyGroup></Project>
-```
-
-then:
-
-```
-dotnet build -c Release QuarterViewSelfCam/QuarterViewSelfCam.csproj   # builds + drops the dll into the game
-./pack.sh                                                              # makes the thunderstore zip in dist/
-```
-
-the bepinex compile dlls are vendored in `libs/` so it builds without bepinex installed.
