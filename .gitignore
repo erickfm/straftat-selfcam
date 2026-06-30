@@ -1,0 +1,11 @@
+# Build output
+**/bin/
+**/obj/
+dist/
+package/SelfCam.dll
+
+# Machine-specific (each dev sets their own game path)
+QuarterViewSelfCam/Directory.Build.local.props
+
+# Large local tooling (r2modman AppImage, etc.)
+tools/
